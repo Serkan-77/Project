@@ -1,0 +1,327 @@
+/* YAKAMOZ SUIT OTEL - FULL PREMIUM CSS 
+    Tüm Revizyonlar Dahil Edilmiştir.
+*/
+
+/* 1. DESIGN SYSTEM & VARIABLES */
+:root {
+    /* Belirgin Satin Gold Tonu */
+    --gold: #d4b06a;        
+    --gold-dark: #b6934c;
+    --dark: #111111;
+    --darker: #0a0a0a;
+    --light: #f8f9fa;
+    --soft: #f1f1f1;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --serif: 'Playfair Display', serif;
+    --sans: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. THEME SUPPORT (Light & Dark) */
+body { 
+    font-family: var(--sans); 
+    overflow-x: hidden; 
+    transition: background-color 0.3s ease;
+}
+
+body.light-theme {
+    background-color: #fff;
+    color: #111;
+}
+body.light-theme .bg-soft { background-color: #f8f9fa !important; }
+body.light-theme .room-card { background-color: #fff; border: 1px solid #eee; }
+body.light-theme .text-muted { color: #666 !important; }
+
+body.dark-theme {
+    background-color: var(--darker);
+    color: #eee;
+}
+body.dark-theme .bg-soft { background-color: var(--dark) !important; }
+body.dark-theme .room-card { background-color: var(--dark); border: 1px solid #222; }
+body.dark-theme .room-card h3 { color: #fff; }
+body.dark-theme .text-muted { color: #aaa !important; }
+
+/* 3. GLOBAL STYLES */
+h1, h2, h3, h4, .hero-title { font-family: var(--serif); }
+.text-gold { color: var(--gold) !important; }
+.text-gold-gradient {
+    background: linear-gradient(to right, #d4b06a, #f1d39b, #d4b06a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.ls-1 { letter-spacing: 1px; }
+.ls-3 { letter-spacing: 3px; }
+.ls-5 { letter-spacing: 5px; }
+.italic { font-style: italic; }
+.py-100 { padding: 100px 0; }
+.z-index-2 { z-index: 2; position: relative; }
+
+/* 4. NAVBAR & NAVIGATION */
+.navbar-custom {
+    padding: 30px 0;
+    transition: var(--transition);
+    background: transparent;
+}
+
+/* Sayfa başındayken yazılar her zaman BEYAZ */
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link,
+.navbar-custom #theme-toggle i {
+    color: #ffffff !important;
+}
+
+.navbar-custom.scrolled {
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Light Theme + Aşağı Kaydırma -> YAZILAR SİYAH OLMALI */
+body.light-theme .navbar-custom.scrolled {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+body.light-theme .navbar-custom.scrolled .navbar-brand,
+body.light-theme .navbar-custom.scrolled .nav-link {
+    color: #111111 !important;
+}
+body.light-theme .navbar-custom.scrolled #theme-toggle i {
+    color: var(--gold) !important;
+}
+
+/* Dark Theme + Aşağı Kaydırma -> YAZILAR BEYAZ KALMALI */
+body.dark-theme .navbar-custom.scrolled {
+    background-color: rgba(10, 10, 10, 0.98) !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+body.dark-theme .navbar-custom.scrolled .navbar-brand,
+body.dark-theme .navbar-custom.scrolled .nav-link,
+body.dark-theme .navbar-custom.scrolled #theme-toggle i {
+    color: #ffffff !important;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin: 0 10px;
+}
+.nav-link:hover { color: var(--gold) !important; }
+
+/* 5. HERO SECTION (Uzaktan Çekim Bina Görseli) */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+.hero-parallax-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 110%;
+    /* Bina görseli uzaktan çekimle güncellendi, karartma artırıldı */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('../images/heroNew.png');
+    background-size: cover;
+    background-position: center bottom;
+    z-index: 1;
+    will-change: transform;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
+    z-index: 2;
+}
+.hero-title { font-size: calc(2.5rem + 3vw); line-height: 1.1; }
+.hero-desc { max-width: 600px; }
+
+/* 6. BUTTONS */
+.btn-gold {
+    background-color: var(--gold);
+    color: #fff !important;
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    padding: 12px 25px;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+.btn-gold:hover { background-color: transparent; color: var(--gold) !important; }
+
+.btn-gold-lg {
+    background-color: var(--gold);
+    color: #fff !important;
+    border-radius: 0;
+    padding: 18px 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: var(--transition);
+}
+.btn-gold-lg:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 176, 106, 0.4); }
+
+.btn-outline-white {
+    border: 1px solid #fff;
+    color: #fff !important;
+    border-radius: 0;
+    padding: 18px 40px;
+    transition: var(--transition);
+}
+.btn-outline-white:hover { background: #fff; color: #000 !important; }
+
+.btn-link-gold {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+.btn-link-gold:hover { padding-left: 10px; color: var(--gold-dark); }
+
+/* 7. ROOM CARDS */
+.room-card {
+    border-radius: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.room-card:hover { transform: translateY(-10px); }
+.room-img-wrapper { position: relative; overflow: hidden; }
+.room-img-wrapper img { transition: transform 1.2s ease; width: 100%; height: 300px; object-fit: cover; }
+.room-card:hover img { transform: scale(1.1); }
+.room-badge {
+    position: absolute;
+    bottom: 0; left: 0;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(5px);
+    color: var(--gold);
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.room-info { padding: 30px; }
+.room-features { display: flex; gap: 20px; font-size: 0.8rem; color: #888; margin-top: 15px; }
+
+/* 8. PANEL DETAIL */
+.room-detail-panel {
+    position: fixed; inset: 0; z-index: 10000;
+    visibility: hidden; opacity: 0; transition: var(--transition);
+}
+.room-detail-panel.active { visibility: visible; opacity: 1; }
+.panel-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); }
+.panel-content {
+    position: absolute; bottom: -100%; left: 0;
+    width: 100%; height: 90vh;
+    background: #fff; transition: bottom 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    overflow-y: auto;
+}
+body.dark-theme .panel-content { background: var(--dark); color: #fff; }
+.room-detail-panel.active .panel-content { bottom: 0; }
+.close-panel {
+    position: absolute; top: 25px; right: 25px;
+    width: 50px; height: 50px; background: var(--gold);
+    color: #fff; border: none; border-radius: 50%; z-index: 10001;
+}
+
+/* 9. AMENITIES (Hizmetler) */
+.amenity-item {
+    padding: 30px 10px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%;
+}
+.amenity-item i { transition: transform 0.3s ease; }
+.amenity-item:hover i { transform: translateY(-10px); color: var(--gold); }
+
+/* 10. GALLERY */
+.gallery-img { overflow: hidden; height: 400px; border-radius: 4px; }
+.gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
+.gallery-img:hover img { transform: scale(1.08); filter: brightness(80%); }
+
+/* 11. SCROLL INDICATOR & PRELOADER */
+.scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3; }
+.mouse { width: 25px; height: 45px; border: 2px solid rgba(255,255,255,0.4); border-radius: 20px; position: relative; }
+.mouse::after {
+    content: ''; position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    width: 4px; height: 8px; background: var(--gold); border-radius: 2px;
+    animation: scroll 2s infinite;
+}
+@keyframes scroll { 0% { top: 8px; opacity: 1; } 100% { top: 25px; opacity: 0; } }
+
+#preloader {
+    position: fixed; inset: 0; background: #0a0a0a; z-index: 11000;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.loader-line { width: 100px; height: 2px; background: rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+.loader-line::after { content: ''; position: absolute; left: -100%; width: 100%; height: 100%; background: var(--gold); animation: loading 1.5s infinite; }
+@keyframes loading { 100% { left: 100%; } }
+
+/* 12. TESTIMONIALS (Carousel) */
+#testimonialCarousel .carousel-item { transition: transform 0.8s ease, opacity 0.8s ease; }
+.italic-bg { background-image: radial-gradient(circle at 10% 20%, rgba(212, 176, 106, 0.05) 0%, transparent 50%); }
+.stars i { font-size: 0.9rem; margin: 0 2px; }
+.carousel-indicators [data-bs-target] { width: 10px; height: 10px; border-radius: 50%; margin: 0 5px; border: none; background-color: var(--gold); }
+
+/* 13. CONTACT & FOOTER */
+.contact-form-card { background: var(--dark); border-top: 4px solid var(--gold); }
+body.light-theme .contact-form-card { background: #fff; }
+.icon-box {
+    width: 50px; height: 50px; background: rgba(197, 160, 89, 0.15);
+    color: var(--gold); display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; font-size: 1.2rem;
+}
+.email { color: var(--gold) !important; text-decoration: none; font-weight: 500; }
+.grayscale { filter: grayscale(1); }
+
+.bg-darker { background-color: #0a0a0a !important; }
+.footer-logo { font-family: var(--serif); font-size: 2rem; letter-spacing: 5px; color: #fff; text-decoration: none; }
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-decoration: none !important; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; transition: var(--transition);
+}
+.footer-nav a:hover { color: var(--gold) !important; }
+.social-links a { color: #fff !important; font-size: 1.4rem; margin: 0 15px; transition: var(--transition); display: inline-block; }
+.social-links a:hover { color: var(--gold) !important; transform: translateY(-3px); }
+footer p.small { color: rgba(255, 255, 255, 0.3) !important; letter-spacing: 1px; }
+
+/* 14. MOBILE ADJUSTMENTS */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #ffffff;
+        position: absolute; top: 100%; left: 0; width: 100%;
+        padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    body.dark-theme .navbar-collapse { background: #111111; }
+    .navbar-collapse .nav-link { color: #111 !important; padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    body.dark-theme .navbar-collapse .nav-link { color: #fff !important; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    
+    .hero-section .container { padding-top: 100px; }
+    .hero-title { font-size: 2.2rem !important; }
+    .py-100 { padding: 60px 0; }
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        background: transparent !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-img { height: 250px; }
+    .amenity-item h6 { font-size: 0.7rem !important; letter-spacing: 1px !important; margin-top: 10px; }
+    .amenity-item i { font-size: 2rem !important; }
+    .py-100 { padding: 50px 0; }
+}
+
+.mobile-cta-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; z-index: 1100; display: flex; }
+.btn-call, .btn-whatsapp { flex: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700; font-size: 0.8rem; color: #fff; }
+.btn-call { background-color: var(--dark); }
+.btn-whatsapp { background-color: #25d366; }
+
+/* REUSABLE */
+.header-line { width: 60px; height: 2px; background: var(--gold); margin-top: 15px; }
