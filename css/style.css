@@ -325,3 +325,145 @@ footer p.small { color: rgba(255, 255, 255, 0.3) !important; letter-spacing: 1px
 
 /* REUSABLE */
 .header-line { width: 60px; height: 2px; background: var(--gold); margin-top: 15px; }
+
+/* --- GENEL MOBİL TAŞMA FİX --- */
+html, body {
+    overflow-x: hidden; /* Kesin çözüm: Yatay taşmayı global engelle */
+    width: 100%;
+    position: relative;
+}
+
+.container, .container-fluid {
+    overflow: hidden; /* İçerideki elemanların dışarı taşmasını engeller */
+}
+
+/* --- LOADER MERKEZLEME FİX --- */
+.loader-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Çizgiyi tam yatay merkezler */
+}
+
+.loader-line {
+    width: 150px; /* Sabit genişlik */
+    height: 2px;
+    background: rgba(197, 160, 89, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #c5a059; /* Gold rengin */
+    animation: loadAnim 2s infinite ease-in-out;
+}
+
+@keyframes loadAnim {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+/* --- İLETİŞİM İKONLARI HİZALAMA FİX --- */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    min-width: 50px; /* Daralmasını engelle */
+    background: rgba(197, 160, 89, 0.1);
+    border-radius: 50%;
+    display: flex !important; /* Flexbox şart */
+    align-items: center !important; /* Dikey merkez */
+    justify-content: center !important; /* Yatay merkez */
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.icon-box i {
+    font-size: 1.2rem;
+    color: #c5a059;
+    line-height: 0; /* Bootstrap ikon kaymalarını önler */
+}
+
+/* --- IPHONE SAFARI ÖZEL DÜZELTME --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem !important; /* Çok büyük başlıkların taşmasını önle */
+    }
+    
+    .contact-info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- MOBİL HATALARI VE TAŞMA DÜZELTMELERİ --- */
+
+/* 1. Yatay Kaymayı Engelle */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Loader (Açılış Çizgisi) Tam Merkezleme */
+.loader-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.loader-line {
+    width: 120px !important;
+    height: 2px;
+    background: rgba(197, 160, 89, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #d4b06a; /* Senin gold rengin */
+    animation: loadAnim 2s infinite ease-in-out;
+}
+
+@keyframes loadAnim {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+/* 3. İletişim İkonlarını Yuvarlak İçinde Merkezleme */
+.icon-box {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    background: rgba(197, 160, 89, 0.1) !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 15px;
+}
+
+.icon-box i {
+    font-size: 1.2rem !important;
+    color: #d4b06a !important;
+    line-height: 0 !important;
+}
+
+/* 4. Bootstrap Row Taşma Engeli */
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
