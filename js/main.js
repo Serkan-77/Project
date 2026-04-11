@@ -4,7 +4,7 @@
 const roomData = {
     'standard-suite': {
         category: 'Ekonomik Konfor',
-        title: 'Starndart Lüx Suit Tek Kişilik Oda',
+        title: 'Standart Lüx Suit Tek Kişilik Oda',
         description: 'Tüm detayların huzurunuz için düşünüldüğü Standart Suite odalarımızda, minimalist bir tasarım ve sıcak bir atmosfer sizi bekliyor. Şehir yorgunluğunu atmak için ideal bir seçenek.',
         size: '35 m²',
         beds: '1 King Size',
@@ -111,7 +111,7 @@ function openRoomDetail(id) {
     const imgContainer = document.getElementById('panelImages');
     imgContainer.innerHTML = data.images.map((img, i) => `
         <div class="carousel-item h-100 ${i === 0 ? 'active' : ''}">
-            <img src="${img}" class="d-block w-100 h-100" style="object-fit:cover;">
+            <img src="${img}" alt="Yakamoz Suit Otel – ${data.title} (${i + 1}/${data.images.length})" class="d-block w-100 h-100" style="object-fit:cover;" loading="lazy">
         </div>
     `).join('');
 
