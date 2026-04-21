@@ -162,6 +162,12 @@ body.dark-theme .navbar-custom.scrolled #theme-toggle i {
 }
 .hero-title { font-size: calc(2.5rem + 3vw); line-height: 1.1; }
 .hero-desc  { max-width: 600px; }
+.hero-subtitle {
+    max-width: 780px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
 
 /* ============================================================
    7. PRELOADER
@@ -281,6 +287,16 @@ body.dark-theme .navbar-custom.scrolled #theme-toggle i {
 }
 .btn-outline-white:hover { background: #fff; color: #000 !important; }
 
+.btn-contact-alt {
+    border-color: var(--gold);
+    color: var(--gold) !important;
+}
+body.light-theme .btn-contact-alt:hover,
+body.dark-theme .btn-contact-alt:hover {
+    background: var(--gold);
+    color: #fff !important;
+}
+
 .btn-link-gold {
     color: var(--gold);
     text-decoration: none;
@@ -305,7 +321,44 @@ body.dark-theme .navbar-custom.scrolled #theme-toggle i {
 }
 
 /* ============================================================
-   10. ROOM CARDS
+   10. LOCAL GUIDE SECTION
+   ============================================================ */
+.guide-section .guide-card {
+    height: 100%;
+    padding: 36px;
+    border: 1px solid rgba(212, 176, 106, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+}
+body.light-theme .guide-section .guide-card {
+    background: #ffffff;
+    border-color: rgba(212, 176, 106, 0.22);
+}
+.guide-list {
+    margin: 0;
+    padding-left: 20px;
+    color: inherit;
+}
+.guide-list li {
+    margin-bottom: 12px;
+}
+.anchor-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid rgba(212, 176, 106, 0.45);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+.anchor-chip:hover {
+    background: var(--gold);
+    color: #fff;
+}
+
+/* ============================================================
+   11. ROOM CARDS
    ============================================================ */
 .room-card {
     border-radius: 0;
@@ -337,7 +390,7 @@ body.dark-theme .navbar-custom.scrolled #theme-toggle i {
 .room-features { display: flex; gap: 20px; font-size: 0.8rem; color: #888; margin-top: 15px; }
 
 /* ============================================================
-   11. ROOM DETAIL PANEL
+    12. ROOM DETAIL PANEL
    ============================================================ */
 .room-detail-panel {
     position: fixed;
@@ -380,7 +433,7 @@ body.dark-theme .panel-content { background: var(--dark); color: #fff; }
 }
 
 /* ============================================================
-   12. AMENITIES
+    13. AMENITIES
    ============================================================ */
 .amenity-item {
     padding: 30px 10px;
@@ -394,14 +447,21 @@ body.dark-theme .panel-content { background: var(--dark); color: #fff; }
 .amenity-item:hover i { transform: translateY(-10px); color: var(--gold); }
 
 /* ============================================================
-   13. GALLERY
+    14. GALLERY
    ============================================================ */
 .gallery-img { overflow: hidden; height: 400px; border-radius: 4px; }
 .gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
 .gallery-img:hover img { transform: scale(1.08); filter: brightness(80%); }
+.gallery-intro {
+    max-width: 720px;
+}
+
+.contact-intro {
+     max-width: 560px;
+}
 
 /* ============================================================
-   14. TESTIMONIALS
+    15. TESTIMONIALS
    ============================================================ */
 #testimonialCarousel .carousel-item { transition: transform 0.8s ease, opacity 0.8s ease; }
 .italic-bg {
@@ -484,6 +544,14 @@ body.light-theme .contact-form-card { background: #fff; }
 }
 .social-links a:hover { color: var(--gold) !important; transform: translateY(-3px); }
 footer p.small { color: rgba(255, 255, 255, 0.3) !important; letter-spacing: 1px; }
+.footer-description {
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.8;
+}
+body.light-theme .footer-description {
+    color: rgba(255, 255, 255, 0.72);
+}
 
 /* ============================================================
    17. MOBILE CTA BAR

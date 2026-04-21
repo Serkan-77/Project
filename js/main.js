@@ -5,7 +5,7 @@ const roomData = {
     'standard-suite': {
         category: 'Ekonomik Konfor',
         title: 'Standart Lüx Suit Tek Kişilik Oda',
-        description: 'Tüm detayların huzurunuz için düşünüldüğü Standart Suite odalarımızda, minimalist bir tasarım ve sıcak bir atmosfer sizi bekliyor. Şehir yorgunluğunu atmak için ideal bir seçenek.',
+        description: 'Standart lüx suit tek kişilik odamız, Malatya merkezde iş seyahati yapan misafirler ve huzurlu bir konaklama arayan çiftler için günlük kiralık daire rahatlığını otel güvenliğiyle birleştirir. Ferah planı, sade tasarımı ve düzenli yaşam alanı sayesinde kısa ya da orta süreli konaklamalarda yüksek verim ve konfor sunar.',
         size: '35 m²',
         beds: '1 King Size',
         images: [
@@ -18,7 +18,7 @@ const roomData = {
     'deluxe-king': {
         category: 'Seçkin Tercih',
         title: 'Deluxe King 3 kişilik Oda',
-        description: 'Geniş yaşam alanı ve ferah balkonu ile Deluxe odalarımız, uzun süreli konaklamalarınızda ev konforunu aratmayacak şekilde tasarlandı. Her sabah taze bir enerjiyle uyanacaksınız.',
+        description: 'Deluxe King odamız, aileler ve geniş alan ihtiyacı duyan misafirler için Malatya suit otel deneyimini üst seviyeye taşır. Ferah balkon, konfor odaklı mobilyalar ve kullanışlı yerleşim planı sayesinde hem şehir ziyaretlerinde hem uzun süreli konaklamalarda premium bir yaşam alanı sunar.',
         size: '45 m²',
         beds: '1 Super King, 1 Tek Kişilik',
         images: [
@@ -31,7 +31,7 @@ const roomData = {
     'executive-penthouse': {
         category: 'Ekonomik Konfor',
         title: 'Standart Suit 2 Kişilik Oda',
-        description: 'Otelimizin en özel katında yer alan odalarımız, kesintisiz şehir manzarası ve VIP hizmetleri ile misafirlerine rüya gibi bir konaklama vaat ediyor. Burası sıradanlığın bittiği yer.',
+        description: 'Standart suit 2 kişilik odamız, Malatya’da lüks konaklama arayan çiftler ve sakin bir atmosfer isteyen misafirler için özenle hazırlanmıştır. Günlük kiralık daire esnekliğini otel standartlarıyla buluşturan bu oda tipi, zarif dekorasyonu ve işlevsel konforuyla şehir merkezine yakın seçkin bir alternatif oluşturur.',
         size: '30 m²',
         beds: '2 Ayrı Tek Kişilik Yatak',
         images: [
@@ -111,7 +111,7 @@ function openRoomDetail(id) {
     const imgContainer = document.getElementById('panelImages');
     imgContainer.innerHTML = data.images.map((img, i) => `
         <div class="carousel-item h-100 ${i === 0 ? 'active' : ''}">
-            <img src="${img}" alt="Yakamoz Suit Otel – ${data.title} (${i + 1}/${data.images.length})" class="d-block w-100 h-100" style="object-fit:cover;" loading="lazy">
+            <img src="${img}" alt="Yakamoz Suit Otel Malatya ${data.title} gorseli ${i + 1}" class="d-block w-100 h-100" style="object-fit:cover;" loading="lazy">
         </div>
     `).join('');
 
